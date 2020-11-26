@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Прогноз исходов сочетанной травмы у детей</title>
+		<link rel='stylesheet' href = "{{url_for('static', filename='style.css')}}">
+	</head>
+	<body>
+	{% from '_formhelpers.html' import render_field %}
+		<h3>Прогноз исходов сочетанной травмы у детей</h3>
+		<div>Сообщите данные пациента</div>
+		<form method=post action='/results'>
+			<table><tr><td><p class="texttitle">Падение с высоты (да/нет)</p>
+				{{ render_field(form.fall,cols='5',rows='1') }}</td>
+				<td><p class="texttitle">Оценка по шкале ком Глаго</p>
+				{{ render_field(form.gcs,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Возраст (в десятичном виде; в годах; с точностью до дней для детей до года, до месяца для всех остальных)</p>
+				{{ render_field(form.age,cols='5',rows='1') }}
+				<td><p class="texttitle">Систолическое артериальное давление</p>
+				{{ render_field(form.sbp,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Концентрация креатинина</p>
+				{{ render_field(form.cr,cols='5',rows='1') }}
+				<td><p class="texttitle">SpO2</p>
+				{{ render_field(form.spo2,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">FiO2</p>
+				{{ render_field(form.fio2,cols='5',rows='1') }}
+				<td><p class="texttitle">Тромбоциты</p>
+				{{ render_field(form.tr,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Концентрация АСТ</p>
+				{{ render_field(form.ast,cols='5',rows='1') }}
+				<td><p class="texttitle">Концентрация хлора</p>
+				{{ render_field(form.cl,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Фентанил (мкг/кг)</p>
+				{{ render_field(form.fen,cols='5',rows='1') }}
+				<td><p class="texttitle">Амилаза (ммоль/л)</p>
+				{{ render_field(form.amyl,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Пропофол (мг/кг)</p>
+				{{ render_field(form.prop,cols='5',rows='1') }}
+				<td><p class="texttitle">Гемотрансфузии (да/нет)</p>
+				{{ render_field(form.pl,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Нейротравма (да/нет)</p>
+				{{ render_field(form.neuro,cols='5',rows='1') }}
+				<td><p class="texttitle">Пиковое давление вдоха</p>
+				{{ render_field(form.pin,cols='5',rows='1') }}</td></tr>
+				<tr><td><p class="texttitle">Дофамин (мкг/кг/мин)</p>
+				{{ render_field(form.dofamin,cols='5',rows='1') }}
+				<td><p class="texttitle">Пол</p>
+				{{ render_field(form.sex,cols='5',rows='1') }}</td></tr>
+			</table>
+			<input type=submit value='Отправить и получить прогноз' name='submit_btn'>
+		</form>
+	</body>
+</html>
+

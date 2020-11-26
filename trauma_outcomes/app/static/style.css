@@ -1,0 +1,42 @@
+body {
+	font-size: 2em
+}
+
+.button{
+	padding-top: 2px
+	padding-bottom: 0px
+}
+.texttitle {
+	text-align: center;
+	font-size: initial;
+}
+
+dd {
+	margin: 0;
+	align-content: center;
+	text-align: center;
+
+}
+table {
+	font-size: 1em;
+	font-size: 1em;
+	align-content: center;
+	border: 2px;
+	border-style: dashed;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+td {
+	text-align: center;
+	width: 25%;
+	align-content: center;
+}
+
+.additional_information {
+	font-size: 0.3em;
+}
+
+h3 {
+	text-align: center;
+}

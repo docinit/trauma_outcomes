@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Прогноз исхода заболевания (тяжелой сочетанной травмы)</title>
+		<link rel="stylesheet"
+			href="{{ url_for('static',
+			filename='style.css') }}">
+	</head>
+	
+	<body>
+		<h3>Наш прогноз исхода для этого пациента:<h3>
+		<div>{{ prediction }} с вероятностью {{ probability }}.</div>
+		<p class='additional_information'>Данный прогноз не является точным предсказанием, что отражается в доле вероятности;</p>
+		<p class='additional_information'>Вероятность - отражает уверенность модели в том или ином результате;</p>
+		<p class='additional_information'>После каждого дополнительного обучения модели уровень порогового значения для вычисления результата меняется.</p>
+		<p class='additional_information'>Это означает, что в следующий раз для принятия положительного решения ("Выживание") модели может быть достаточно меньшего уровня уверенности в таком исходе.</p>
+		<div class='button'>
+			<form action="/thanks" method="post">
+				<input type=submit value='Правильно' name='feedback_button'>
+				<input type=submit value='Неправильно' name='feedback_button'>
+				<input type=hidden value='{{ prediction }}' name='prediction'>
+				<input type=hidden value='{{ content }}' name='prognose_requesting'>
+			</form>
+		</div>
+		
+		<div class='button'>
+			<form action="/">
+				<input type=submit value='Проанализировать еще одного пациента'>
+			</form>
+		</div>
+	</body>
+</html> 
